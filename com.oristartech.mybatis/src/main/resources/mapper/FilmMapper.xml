@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- <mapper namespace="com.oristartech.mapper.FilmMapper">
+	<resultMap id="BaseResultMap" type="com.oristartech.pojo.Film">
+		<id property="film_code" column="film_code" jdbcType="VARCHAR" />
+		<result property="film_name" column="film_name" jdbcType="VARCHAR" />
+		<association property="version" javaType="com.oristartech.pojo.Version" column="version_code">
+			<id property="v_code" column="v_code" jdbcType="VARCHAR" />
+			<result property="v_name" column="v_name" jdbcType="VARCHAR" />
+		</association>
+		<collection property="languages" ofType="com.oristartech.pojo.Language" column="language_code">
+			<id property="l_code" column="l_code" jdbcType="VARCHAR" />
+			<result property="l_name" column="l_name" jdbcType="VARCHAR"/>	
+        </collection>
+	</resultMap>
+	
+	<select id="findByCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+		 select * from film f,version v,language l where f.version_code=v.v_code and f.language_code=l.l_code and f.film_code=#{filmCode} 	
+	</select>
+</mapper> -->
+<mapper namespace="com.oristartech.mapper.FilmMapper">
+	<resultMap id="BaseResultMap" type="com.oristartech.pojo.Film">
+		<id property="film_code" column="film_code" />
+		<result property="film_name" column="film_name" />
+		<result property="date_release" column="date_release" />
+		<result property="film_time" column="film_time" />
+		<result property="film_level" column="film_level" />
+		<result property="film_type" column="film_type" />
+		<result property="director" column="director" />
+		<result property="cast" column="cast" />
+		<result property="film_image" column="film_image" />
+		<result property="film_off_date" column="film_off_date" />
+		<association property="filmVersion" column="version_code"
+			javaType="com.oristartech.pojo.Version">
+			<id property="version_code" column="version_code" jdbcType="VARCHAR" />
+			<result property="version_name" column="version_name" jdbcType="VARCHAR"/>
+		</association>
+		<collection property="filmLanguage" ofType="com.oristartech.pojo.Language">
+			<result property="language_code" column="language_code" jdbcType="VARCHAR"/>
+			<result property="language_name" column="language_name" jdbcType="VARCHAR"/>
+		</collection>
+	</resultMap>
+	
+	<select id="findByCode" resultMap="BaseResultMap" parameterType="java.lang.String" >
+		 select * from film f,version v,language l where f.version_code=v.version_code and f.language_code=l.language_code and f.film_code=#{filmCode} 	
+	</select>
+	
+	<select id="findAll" resultType="film">
+	 select * from film
+	</select>
+	<select id="findByDate" resultType="String">
+	   select distinct s.film_code 
+	   from session s
+	   where unix_timestamp(begin_time)>unix_timestamp(#{date})
+	</select>
+	<select id="findByFilmCodes" resultType="Film">
+	     select *  
+           from film f 
+         where f.film_code in  
+        <foreach collection="list" item="filmCode" index="index"  
+           open="(" close=")" separator=",">  
+           #{filmCode}  
+        </foreach> 
+        order by f.date_release
+	</select>
+	
+</mapper>

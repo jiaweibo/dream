@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Home</title>
+		<link rel="stylesheet" href="../maincss/base.css">
+		<link rel="stylesheet" href="../maincss/bootstrap.css">
+		<link rel="stylesheet" href="../maincss/check_film.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="left_main">
+				<div class="left_main_title">
+					<ul>
+						<li class="active" film_status="film_name">按影片</li>
+						<li film_status="film_seat" class="seat">按座位</li>
+						<li film_status="film_date">按日期</li>
+					</ul>
+				</div>
+
+				<div class="left_main_content">
+					<div class="film_name file_comment">
+					</div>
+					<div class="film_seat file_comment"></div>
+					<div class="film_date file_comment"></div>
+				</div>
+			</div>
+
+			<div class="right_main">
+				<div class="right_main_top">
+					<p id="cinemaName">测试影院</p>
+					<input type="button" idvalue="今天" />
+					<input type="button" id="film_date" value="10月17日" />
+					<input type="button" id="film_date" value="10月18日" />
+				</div>
+				<div class="right_main_bottom">
+					<table class="table table-hover table-bordered table-striped jambo_table bulk_action">
+						<thead>
+							<tr>
+								<th>放映厅</th>
+								<th>发行版本</th>
+								<th>语言</th>
+								<th>放映开始时间</th>
+								<th>结束时间</th>
+								<th>剩余座位/总座位</th>
+								<th>标准票价</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script src="../mainjs/jquery.min.js"></script>
+	<script src="../mainjs/bootstrap.js"></script>
+	<script src="../mainjs/check_film.js"></script>
+	<script src="../mainjs/jquery-1.11.3.js"></script>
+</html>

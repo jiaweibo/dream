@@ -1,0 +1,111 @@
+
+
+.main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.left_main{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    float: left;
+    border: none;
+    border-right: 1px solid  #000;
+}
+.right_main{
+    position: absolute;
+    margin-left: 300px;
+    width: 100%;
+    height: 100%;
+    float: right;
+}
+
+.left_main_title{
+    /*height: 40px;*/
+    width: 100%;
+}
+.left_main_title ul{
+    padding: 10px;
+    overflow: hidden;
+}
+.left_main_title ul li{
+    height: 40px;
+    line-height: 40px;
+    width: 91px;
+    text-align: center;
+    float: left;
+    list-style: none;
+}
+
+.active{
+    color:#4DA1FF;
+    border-bottom: 2px  solid #4DA1FF;
+}
+
+.left_main_content{
+    height: 100%;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.file_comment{
+    display: none;
+}
+
+.film_name{
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.active_film{
+    background-color: #4DA1FF !important;
+}
+
+.each_film{
+    width: 100%;
+    height: 100px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+}
+.each_film_name{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 19px;
+}
+.each_film_code{
+    display: block;
+    color:#999999;
+    float: right;
+    margin-top: 41px;
+    margin-right: 9px;
+}
+.each_film_time{
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.right_main{
+    width: 100%;
+}
+.right_main_top{
+    height: 150px;
+    width: 100%;
+    border-bottom: 2px  solid  #cccccc;
+}
+
+
+
+
+
+
+
+
+
+
